@@ -82,6 +82,15 @@ const LearnerSubmissions = [
 
 function getLearnerData(course, ag, submissions) {
 
+    try {
+        if (AssignmentGroup.course_id !== CourseInfo.id) {
+          console.error("Course ID doesn't match")
+        }
+      } catch (error) {
+        console.log(error)
+      } 
+
+
 
 
     let points_dueTable = AssignmentGroup.assignments.reduce((acc, assignment) => {
